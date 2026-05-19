@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuSection from '../components/MenuSection';
 // DEPLOYMENT: Replace http://localhost:5000 with your deployed backend URL
-const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API = process.env.REACT_APP_API_URL || 'https://biterush-api.onrender.com';
 
 const SLIDES = [
   { emoji: '🎉', title: 'Weekend Mega Deal', subtitle: 'Get 2 large pizzas + 4 drinks for the price of one', tag: '40% OFF', bg: 'linear-gradient(135deg,#fff0f2,#ffd0d8)' },
