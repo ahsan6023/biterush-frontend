@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 // DEPLOYMENT: Replace http://localhost:5000 with your deployed backend URL
-const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API = process.env.REACT_APP_API_URL || 'https://biterush-api.onrender.com';
 
 const Cart = () => {
   const { cart, updateQuantity, removeFromCart, clearCart, cartTotal, addToHistory } = useCart();
