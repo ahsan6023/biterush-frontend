@@ -1,0 +1,56 @@
+/* ── Global Reset & CSS Variables ── */
+:root {
+  --red: #e4002b;
+  --red-dark: #b8001f;
+  --red-deep: #8c0016;
+  --red-light: #fff0f2;
+  --red-border: #ffd0d8;
+  --red-glow: rgba(228,0,43,.35);
+
+  --bg: #fffdf8;
+  --bg-night: #0f0f0f;
+  --surface: #ffffff;
+  --surface-night: #1a1a1a;
+  --dark: #1c1c1e;
+  --dark-night: #f0f0f0;
+  --muted: #888;
+  --muted-night: #aaa;
+  --header-bg: #ffffff;
+  --header-bg-night: #111111;
+  --footer-bg: #1c1c1e;
+  --card-border-night: #2a2a2a;
+
+  --radius: 50px;
+  --card-radius: 20px;
+  --transition: all 0.25s ease;
+}
+
+/* Night mode overrides */
+body.night {
+  --bg: var(--bg-night);
+  --surface: var(--surface-night);
+  --dark: var(--dark-night);
+  --muted: var(--muted-night);
+  --header-bg: var(--header-bg-night);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--dark);
+  font-family: 'Nunito Sans', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+/* Horizontal scroll hide scrollbar */
+.scroll-hide::-webkit-scrollbar { display: none; }
+.scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }

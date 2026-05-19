@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Setup</title>
+</head>
+<body>
+    <h1>Creating Admin Account...</h1>
+    <button onclick="createAdmin()">Click to Create Admin</button>
+    <pre id="result"></pre>
+
+    <script>
+        async function createAdmin() {
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/setup', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                document.getElementById('result').innerHTML = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('result').innerHTML = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

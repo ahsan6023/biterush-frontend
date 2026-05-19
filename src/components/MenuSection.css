@@ -1,0 +1,353 @@
+.menu-section { 
+  padding: 60px 48px; 
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--dark);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 12px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: var(--red);
+  border-radius: 2px;
+}
+
+/* Category tabs */
+.category-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  justify-content: center;
+}
+.cat-tab {
+  background: var(--surface);
+  border: 1.5px solid #eee;
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  cursor: pointer;
+  color: var(--dark);
+  transition: all 0.2s ease;
+}
+.cat-tab:hover {
+  background: var(--red-light);
+  border-color: var(--red-border);
+  color: var(--red);
+  transform: translateY(-2px);
+}
+.cat-tab.active {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  box-shadow: 0 4px 14px var(--red-glow);
+}
+
+/* Horizontal scroll wrapper */
+.items-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 20px;
+}
+
+/* THIS IS CRITICAL - Creates horizontal scroll with exactly 3 items visible */
+.items-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+  padding-top: 4px;
+  min-height: 320px;
+  flex: 1;
+  /* Hide scrollbar by default but keep functionality */
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar styling (visible on hover) */
+.items-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.items-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.items-scroll::-webkit-scrollbar-thumb {
+  background: var(--red);
+  border-radius: 10px;
+}
+
+.items-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--red-dark);
+}
+
+/* Food item card - FIXED WIDTH so exactly 3 show at a time */
+.item-card {
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  background: var(--surface);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,.06);
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.13);
+}
+
+/* Navigation buttons */
+.scroll-btn {
+  background: var(--red);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  flex-shrink: 0;
+}
+
+.scroll-btn:hover {
+  background: var(--red-dark);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+
+.scroll-btn:active {
+  transform: scale(0.95);
+}
+
+/* Scroll indicator dots */
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.scroll-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.scroll-dot:hover {
+  background: var(--red);
+  transform: scale(1.2);
+}
+
+.scroll-dot.active {
+  width: 28px;
+  border-radius: 4px;
+  background: var(--red);
+}
+
+.item-emoji-box {
+  height: 140px;
+  background: linear-gradient(135deg, var(--red-light), #ffe8ec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.item-body { 
+  padding: 18px; 
+}
+.item-body h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+.item-body p {
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.5;
+  min-height: 48px;
+  margin-bottom: 12px;
+}
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.item-price {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--dark);
+}
+.add-to-cart-btn {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: .8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px var(--red-glow);
+}
+.add-to-cart-btn:hover {
+  background: var(--red-dark);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(184,0,31,.4);
+}
+.add-to-cart-btn.added {
+  background: #27ae60;
+  box-shadow: 0 3px 10px rgba(39,174,96,.3);
+}
+
+/* Empty category message */
+.empty-category-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 300px;
+  padding: 60px 20px;
+  background: var(--surface);
+  border-radius: var(--card-radius);
+  color: var(--muted);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px dashed #ddd;
+}
+
+/* Skeleton loading */
+.loading-row { 
+  display: flex; 
+  gap: 20px; 
+  overflow: hidden; 
+}
+.skeleton-card {
+  width: 280px;
+  min-width: 280px;
+  height: 320px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--card-radius);
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Mobile responsive - show 2 items on mobile */
+@media (max-width: 768px) {
+  .menu-section { 
+    padding: 40px 16px; 
+  }
+  .section-title { 
+    font-size: 1.7rem; 
+  }
+  
+  /* Show 2 items on mobile */
+  .item-card {
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+  }
+  
+  .scroll-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+  
+  .items-scroll-wrapper {
+    margin: 0 8px;
+    gap: 6px;
+  }
+}
+
+/* For very small screens - show 1.5 items */
+@media (max-width: 480px) {
+  .item-card {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+  }
+}
+/* Image styling for menu items */
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover .item-image {
+  transform: scale(1.05);
+}
+
+.item-emoji-fallback {
+  font-size: 3.5rem;
+}
+
+/* Gradient overlay for images (optional - makes text more readable) */
+.item-emoji-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.item-emoji-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item-card:hover .item-emoji-box::after {
+  opacity: 1;
+}
